@@ -11,7 +11,6 @@ public class FirstComeFirstServed {
         float averageTurnOnTime;
         p=AscendingOrderArrivalTime(p,i);
         int m=0;
-
         for(int j =0;j<i;j++){
 
             w[p[j][0]-1]=m-p[j][1];
@@ -51,7 +50,7 @@ public class FirstComeFirstServed {
 
         for(int j=0;j<i;j++){
             for(int k=j+1;k<i;k++){
-                if (p[j][1]>p[k][1]){
+                if (p[j][1]>p[k][1]||(p[j][1]==p[k][1]&&p[j][1]>p[k][1])){
                     for (int x=0;x<4;x++) {
                         temp[x] = p[j][x];
                         p[j][x]=p[k][x];

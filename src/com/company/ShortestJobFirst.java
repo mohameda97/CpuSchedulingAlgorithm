@@ -46,7 +46,7 @@ public class ShortestJobFirst {
 
         for(int j=0;j<i;j++){
             for(int k=j+1;k<i;k++){
-                if (p[j][2]>p[k][2]){
+                if (p[j][2]>p[k][2]||(p[j][2]==p[k][2]&&p[j][1]>p[k][1])){
                     for (int x=0;x<4;x++) {
                         temp[x] = p[j][x];
                         p[j][x]=p[k][x];

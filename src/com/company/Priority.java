@@ -42,7 +42,7 @@ public class Priority {
 
         for(int j=0;j<i;j++){
             for(int k=j+1;k<i;k++){
-                if (p[j][3]>p[k][3]){
+                if (p[j][3]>p[k][3]||(p[j][3]==p[k][3]&&p[j][1]>p[k][1])){
                     for (int x=0;x<4;x++) {
                         temp[x] = p[j][x];
                         p[j][x]=p[k][x];
