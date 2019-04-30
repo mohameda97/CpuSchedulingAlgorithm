@@ -13,11 +13,7 @@ public class FirstComeFirstServed {
         int m=0;
 
         for(int j =0;j<i;j++){
-            if (j<i-1){
-                if (m<p[j+1][1]){
-                    m=p[j+1][1];
-                }
-            }
+
             w[p[j][0]-1]=m-p[j][1];
             m=m+p[j][2];
             tOn[p[j][0]-1]=m-p[j][1];
