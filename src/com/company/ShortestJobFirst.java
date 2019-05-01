@@ -11,7 +11,7 @@ public class ShortestJobFirst {
         int turnOnTime=0;
         float averageWatingTime;
         float averageTurnOnTime;
-        int m=0;
+        int m=0; //current time
         for(int j =0;j<i;j++){
             w[p[j][0]-1]=m;
             m=m+p[j][2];
@@ -37,6 +37,11 @@ public class ShortestJobFirst {
         }
         System.out.println();
         System.out.println("average Turn On Time SFJ  = " +averageTurnOnTime);
+        System.out.println();
+        Main.avgwait[1]=averageWatingTime;
+        Main.avgtOn[1]=averageTurnOnTime;
+
+
     }
 
 

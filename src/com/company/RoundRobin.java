@@ -3,6 +3,7 @@ package com.company;
 public class RoundRobin {
     public static void RoundRobin(int p[][],int i,int q){
         int c=0;
+        int c1=0;
         int j =0;
         int z=0;
         int []w=new int[i];
@@ -18,6 +19,7 @@ public class RoundRobin {
         }
         while (c<i){
             j=0;
+            c1=0;
             for (j=0;j<i;j++){
                 if (z>=p[j][1]&&p[j][2]>0){
                     if (p[j][2]>q){
@@ -33,12 +35,19 @@ public class RoundRobin {
                         tOn[p[j][0]-1]=z-p[j][1];
                         p[j][2]=0;
                         c=c+1;
-                        if (j<i-1){
-                            if (z<p[j+1][1]){
-                                z=p[j+1][1];
-                            }
-                        }
 
+
+                    }
+
+                }
+               else if (j<i-1&&z>=p[j][1]){
+                    for (int k=0;k<j+1;k++){
+                        if (p[k][2]==0){
+                            c1=c1+1;
+                        }
+                    }
+                    if (c1==j+1&&z<p[j+1][1]){
+                        z=p[j+1][1];
                     }
                 }
             }
@@ -65,6 +74,10 @@ public class RoundRobin {
         }
         System.out.println();
         System.out.println("average Turn On Time Round Robin  = " +averageTurnOnTime);
+        System.out.println();
+        Main.avgwait[5]=averageWatingTime;
+        Main.avgtOn[5]=averageTurnOnTime;
+
     }
     public static int [][]AscendingOrderArrivalTime(int p[][], int i){
         int []temp=new int[4];

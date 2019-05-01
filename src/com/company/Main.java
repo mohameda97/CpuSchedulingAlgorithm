@@ -1,8 +1,9 @@
 package com.company;
 
 import java.util.Scanner;
-
 public class Main {
+    public static float []avgwait=new float[6];
+    public static float []avgtOn=new float[6];
 
     public static void main(String[] args) {
         // write your code here
@@ -11,6 +12,8 @@ public class Main {
         int i=m.nextInt();
         System.out.println("Enter Quantum ");
         int q=m.nextInt();
+        System.out.println("Enter in row number of process , arrival time ,burst time , priority ");
+
         int [][]p1=new int[i][4];
         int [][]p2=new int[i][4];
         int [][]p3=new int[i][4];
@@ -40,5 +43,53 @@ public class Main {
         x4.Priority(p4,i);
         x5.PriorityPrimitive(p5,i);
         x6.RoundRobin(p6,i,q);
+      float   min=Integer.MAX_VALUE;
+      int s=0;
+      float  min1=Integer.MAX_VALUE;
+      int s1=0;
+        for (int k=0;k<6;k++){
+            if(avgwait[k]<min){
+                min=avgwait[k];
+                s=k;
+
+            }
+        }
+        for (int k=0;k<6;k++){
+            if(avgtOn[k]<min1){
+                min1=avgtOn[k];
+                s1=k;
+
+            }
+        }
+        System.out.print("min avg wating time is ");
+        if (s==0){
+            System.out.println("First Come First Served");
+        }else if (s==1){
+            System.out.println("Shortest Job First");
+        }
+        else if (s==2){
+            System.out.println("Shortest Job Remaining");
+        }else if (s==3){
+            System.out.println("Priority");
+        }else if (s==4){
+            System.out.println("Priority Remaining");
+        }else if (s==5){
+            System.out.println("Round Robin");
+        }
+        System.out.print("min avg Ton is ");
+        if (s1==0){
+            System.out.println("First Come First Served");
+        }else if (s1==1){
+            System.out.println("Shortest Job First");
+        }
+        else if (s1==2){
+            System.out.println("Shortest Job Remaining");
+        }else if (s1==3){
+            System.out.println("Priority");
+        }else if (s1==4){
+            System.out.println("Priority Remaining");
+        }else if (s1==5){
+            System.out.println("Round Robin");
+        }
 
 }}

@@ -10,14 +10,14 @@ public class FirstComeFirstServed {
         float averageWatingTime;
         float averageTurnOnTime;
         p=AscendingOrderArrivalTime(p,i);
-        int m=0;
+        int m=0; //Current Time
 
         for(int j =0;j<i;j++){
 
             w[p[j][0]-1]=m-p[j][1];
             m=m+p[j][2];
             tOn[p[j][0]-1]=m-p[j][1];
-            if (j<i-1){
+            if (j<i-1){ // If there are a gap between process
                 if (m<p[j+1][1]){
                     m=p[j+1][1];
                 }
@@ -44,6 +44,10 @@ public class FirstComeFirstServed {
         }
         System.out.println();
         System.out.println("average Turn On Time FCFS  = " +averageTurnOnTime);
+        System.out.println();
+        Main.avgwait[0]=averageWatingTime;
+        Main.avgtOn[0]=averageTurnOnTime;
+
     }
 
     public static int [][]AscendingOrderArrivalTime(int p[][], int i){

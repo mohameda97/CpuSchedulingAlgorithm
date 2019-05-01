@@ -106,6 +106,9 @@ public class PriorityPrimitive {
         }
         System.out.println();
         System.out.println("average Turn On Time Priority Primitive = " +averageTurnOnTime);
+        System.out.println();
+        Main.avgwait[4]=averageWatingTime;
+        Main.avgtOn[4]=averageTurnOnTime;
 
     }
     public static int [][]AscendingOrderArrivalTime(int p[][], int i){

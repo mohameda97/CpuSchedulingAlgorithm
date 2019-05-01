@@ -5,7 +5,7 @@ public class ShortestJobRemaining {
         int []x=new int[i];
         int []w=new int[i];
         int []tOn=new int[i];
-        int z=0;
+        int z=0;//current time
         int c=0;
         int c2=0;
         boolean c1=true;
@@ -24,7 +24,7 @@ public class ShortestJobRemaining {
         }
         e=AscendingOrderArrivalTime(e,i);
         for( j=0;j<i-1;j++) {
-            s=0;
+            s=0; // min index of process
             c1=true;
             while(c1){
                 min=Integer.MAX_VALUE;
@@ -36,15 +36,15 @@ public class ShortestJobRemaining {
 
                     }
                 }
-                c2=e[j+1][1]-z;
-                x1=e[s][2]+z;
+                c2=e[j+1][1]-z;// difference between arrival time of next process with current time
+                x1=e[s][2]+z; // time if the process isn't break
 
                 if (x1<=e[j+1][1]&&e[s][2]!=0){
                     x2=e[s][2];
                     e[s][2]=0;
                     w[(e[s][0]-1)]=z-x[(e[s][0]-1)]+w[(e[s][0]-1)];
                     z=x2+z;
-                    x[(e[s][0]-1)]=z;
+                    x[(e[s][0]-1)]=z; // previous time of the process until it comes again
                     tOn[e[s][0]-1]=z-e[s][1];
 
 
@@ -58,7 +58,6 @@ public class ShortestJobRemaining {
 
                 }
 
-
                 for (int q=0;q<j+1;q++){
 
                     if (e[q][2]==0){
@@ -69,7 +68,6 @@ public class ShortestJobRemaining {
                     z=e[j+1][1];
                     c1=false;
                 }
-
             }
         }
 
@@ -105,6 +103,10 @@ public class ShortestJobRemaining {
         }
         System.out.println();
         System.out.println("average Turn On Time   = " +averageTurnOnTime);
+        System.out.println();
+        Main.avgwait[2]=averageWatingTimeShortestRemainingTime;
+        Main.avgtOn[2]=averageTurnOnTime;
+
     }
     public static int [][]AscendingOrderArrivalTime(int p[][], int i){
         int []temp=new int[4];

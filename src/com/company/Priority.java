@@ -36,6 +36,11 @@ public class Priority {
         }
         System.out.println();
         System.out.println("average Turn On Time Priority  = " +averageTurnOnTime);
+        System.out.println();
+        Main.avgwait[3]=averageWatingTime;
+        Main.avgtOn[3]=averageTurnOnTime;
+
+
     }
     public static int [][]AscendingOrderPriority(int p[][], int i){
         int []temp=new int[4];
