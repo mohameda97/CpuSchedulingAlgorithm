@@ -73,7 +73,8 @@ public class Main {
             System.out.println("Priority");
         }else if (s==4){
             System.out.println("Priority Remaining");
-        }else if (s==5){
+        }
+        else if (s==5){
             System.out.println("Round Robin");
         }
         System.out.print("min avg Ton is ");

@@ -91,19 +91,19 @@ public class ShortestJobRemaining {
         }
         averageWatingTimeShortestRemainingTime=(float)watingTimeShortestRemainingTime/i;
         averageTurnOnTime=(float)turnOnTime/i;
-  System.out.println("Waiting Time for each process");
+  System.out.println("Waiting Time for each process Shortest Job Remaining First");
         for ( j=0;j<i;j++){
             System.out.print("p"+(j+1)+"="+w[j]+"  ");
         }
         System.out.println();
         System.out.println("average waiting time Shortest Job Remaining First   = " +averageWatingTimeShortestRemainingTime);
         System.out.println();
-        System.out.println("Turn On Time for each process ");
+        System.out.println("Turn On Time for each process Shortest Job Remaining First");
         for ( j=0;j<i;j++){
             System.out.print("p"+(j+1)+"="+tOn[j]+"  ");
         }
         System.out.println();
-        System.out.println("average Turn On Time   = " +averageTurnOnTime);
+        System.out.println("average Turn On Time Shortest Job Remaining First  = " +averageTurnOnTime);
         System.out.println();
         Main.avgwait[2]=averageWatingTimeShortestRemainingTime;
         Main.avgtOn[2]=averageTurnOnTime;

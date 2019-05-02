@@ -44,6 +44,9 @@ public class FirstComeFirstServed {
         }
         System.out.println();
         System.out.println("average Turn On Time FCFS  = " +averageTurnOnTime);
+        System.out.println();
+        Main.avgwait[0]=averageWatingTime;
+        Main.avgtOn[0]=averageTurnOnTime;
     }
 
     public static int [][]AscendingOrderArrivalTime(int p[][], int i){
