@@ -110,14 +110,14 @@ public class ShortestJobRemaining {
 
     }
     public static int [][]AscendingOrderArrivalTime(int p[][], int i){
-        int []temp=new int[4];
+        int temp=0;
         for(int j=0;j<i;j++){
             for(int k=j+1;k<i;k++){
-                if (p[j][1]>p[k][1]||(p[j][1]==p[k][1]&&p[j][1]>p[k][1])){
+                if (p[j][1]>p[k][1]||(p[j][1]==p[k][1]&&p[j][0]>p[k][0])){
                     for (int x=0;x<4;x++) {
-                        temp[x] = p[j][x];
+                        temp = p[j][x];
                         p[j][x]=p[k][x];
-                        p[k][x]=temp[x];
+                        p[k][x]=temp;
                     }
 
                 }
@@ -126,15 +126,15 @@ public class ShortestJobRemaining {
         return p;
     }
     public static int [][]AscendingOrderBurstTime(int p[][], int i){
-        int []temp=new int[4];
+        int temp=0;
 
         for(int j=0;j<i;j++){
             for(int k=j+1;k<i;k++){
                 if (p[j][2]>p[k][2]||(p[j][2]==p[k][2]&&p[j][1]>p[k][1])){
                     for (int x=0;x<4;x++) {
-                        temp[x] = p[j][x];
+                        temp = p[j][x];
                         p[j][x]=p[k][x];
-                        p[k][x]=temp[x];
+                        p[k][x]=temp;
                     }
 
                 }
