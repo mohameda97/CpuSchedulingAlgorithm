@@ -10,7 +10,7 @@ public class FirstComeFirstServed {
         float averageWatingTime;
         float averageTurnOnTime;
         p=AscendingOrderArrivalTime(p,i);
-        int m=0;
+        int m=p[0][1];
 
         for(int j =0;j<i;j++){
 

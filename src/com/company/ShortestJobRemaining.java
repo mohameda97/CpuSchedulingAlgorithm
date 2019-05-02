@@ -23,6 +23,7 @@ public class ShortestJobRemaining {
             x[e[j][0]-1]=e[j][1];
         }
         e=AscendingOrderArrivalTime(e,i);
+        z=e[0][1];
         for( j=0;j<i-1;j++) {
             s=0; // min index of process
             c1=true;

@@ -12,7 +12,7 @@ public class Main {
         int i=m.nextInt();
         System.out.println("Enter Quantum ");
         int q=m.nextInt();
-        System.out.println("Enter in row number of process , arrival time ,burst time , priority ");
+        System.out.println("Enter in row number of process > 0 , arrival time >= 0 ,burst time > 0 , priority >=0 ");
 
         int [][]p1=new int[i][4];
         int [][]p2=new int[i][4];

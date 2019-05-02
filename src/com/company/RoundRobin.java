@@ -14,6 +14,7 @@ public class RoundRobin {
         float averageWatingTime;
         float averageTurnOnTime;
         p=AscendingOrderArrivalTime(p,i);
+        z=p[0][1];
         for ( j=0;j<i;j++){
             x[p[j][0]-1]=p[j][1];
         }
